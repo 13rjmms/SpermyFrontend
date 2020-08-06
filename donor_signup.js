@@ -3,6 +3,7 @@ $(document).ready(function () {
    
     $('#submitdonor').click(function() {
         formPost();
+        window.location.href = 'index.html';
     });
 
     function formPost() {
@@ -56,6 +57,6 @@ $(document).ready(function () {
         }); 
     }
 
-
+  
 
 });

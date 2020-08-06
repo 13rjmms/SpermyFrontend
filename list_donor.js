@@ -92,7 +92,7 @@ function getAllDonorsSuccess(response) {
             const $this = $(this)
             const ourClass = $this.attr('class');
             const $ourHolder = $('#donors');
-            $('#filterRaces li').removeClass('active');
+            $('.filters li').removeClass('active');
             $this.parent().addClass('active');
             
             if (ourClass === 'all') {
@@ -108,7 +108,7 @@ function getAllDonorsSuccess(response) {
             const $this = $(this)
             const ourClass = $this.attr('class');
             const $ourHolder = $('#donors');
-            $('#filterRaces li').removeClass('active');
+            $('.filters li').removeClass('active');
             $this.parent().addClass('active');
             
             if (ourClass === 'all') {
