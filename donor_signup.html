@@ -19,7 +19,8 @@
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
         integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
         crossorigin="anonymous"></script>
-    <title>Doner</title>
+        <script defer src="donor.js"></script>
+    <title>Donor Sign Up</title>
 </head>
 
 <body>
@@ -34,40 +35,74 @@
     </nav>
     <div class="container">
         <form>
+
             <div class="form-row">
               <div class="col-md-4 mb-3">
-                <input type="text" class="form-control" id="race" placeholder="Race" value="" required>
+                <input type="text" class="form-control" id="firstname" placeholder="First Name" value="" required>
               </div>
+
               <div class="col-md-4 mb-3">
-                <input type="text" class="form-control" id="hairColor" placeholder="Hair Color" value="" required>
+                <input type="text" class="form-control" id="lastname" placeholder="Last Name" value="" required>
               </div>
+
+              <div class="col-md-4 mb-3">
+                <input type="text" class="form-control" id="age" placeholder="Age" value="" required>
+              </div>
+
               <div class="col-md-4 mb-3">
                 <div class="input-group">
-                  <input type="text" class="form-control" id="eyeColor" placeholder="Eye Color" aria-describedby="inputGroupPrepend2" required>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="emailsymbol">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="email" placeholder="E-mail" aria-describedby="inputGroupPrepend2" required>
                 </div>
               </div>
             </div>
+
             <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <input type="text" class="form-control" id="nacionality" placeholder="Nacionality" required>
-              </div>
               <div class="col-md-3 mb-3">
-                <input type="text" class="form-control" id="weigth" placeholder="Weigth" required>
+                <input type="text" class="form-control" id="country" placeholder="Country" required>
               </div>
+
+            <div class="form-row">
               <div class="col-md-3 mb-3">
-                <input type="text" class="form-control" id="bloodType" placeholder="Blood Type" required>
+                <input type="text" class="form-control" id="city" placeholder="City" required>
               </div>
+
+              <div class="col-md-3 mb-3">
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <input type="text" class="form-control" id="password" placeholder="Password" required>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <input type="text" class="form-control" id="phone" placeholder="Phone" required>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <input type="text" class="form-control" id="bi" placeholder="BI" required>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <input type="text" class="form-control" id="gender" placeholder="Gender" required>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <input type="text" class="form-control" id="address" placeholder="Address" required>
+              </div>
+
             </div>
             <div class="form-group">
               <div>
-      </div><div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                <label class="form-check-label" for="invalidCheck2">
-                  Agree to terms and conditions
+      </div>
+      
+
                 </label>
               </div>
             </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" type="submit" id="submitdonor">Submit</button>
     </div>
 </body>
 
