@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+            integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            defer
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+            integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+            crossorigin="anonymous"
+        ></script>
+        <script defer src="list_donor.js"></script>
+        <title>Spermy</title>
+    </head>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
-        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
-        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
-        crossorigin="anonymous"></script>
-    <script defer src="list_donor.js"></script>
-    <title>Spermy</title>
-</head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.html" style="color: #00bdff;">
+                <img src="./assets/logo.jpg" width="30" height="30" class="d-inline-block align-top" style="border-radius: 50%;" alt="" loading="lazy" />
+                Spermy
+            </a>
+            <form class="form-inline">
+                <button class="btn btn-outline-danger my-2 my-sm-0">Logout</button>
+            </form>
+        </nav>
 
-<body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="index.html" style="color: #00bdff">
-            <img src="./assets/logo.jpg" width="30" height="30" class="d-inline-block align-top" style="border-radius: 50%" alt="" loading="lazy">
-            Spermy
-        </a>
-        <form class="form-inline">
-            <button class="btn btn-outline-danger my-2 my-sm-0">Logout</button>
-        </form>
-    </nav>
-
-    <div class="container">
-        <div class="col-12">
-            <p>Filter data</p>
+        <div class="container">
+            <div class="col-12">
+                <ul id="filterOptions">
+                    <li class="active"><a href="#" class="all">All</a></li>
+                    <li><a href="#" class="prem">Premier League</a></li>
+                    <li><a href="#" class="champ">Championship</a></li>
+                    <li><a href="#" class="league1">League 1</a></li>
+                    <li><a href="#" class="league2">League 2</a></li>
+                </ul>
+            </div>
+            <div class="row" id="donors"></div>
         </div>
-        <div class="row" id="donors">
-            
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        You are now connected
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-
-
-</body>
-
+    </body>
 </html>
