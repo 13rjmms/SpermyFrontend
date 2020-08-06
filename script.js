@@ -4,10 +4,11 @@ $(document).ready(function () {
 
 
 function getAllDonors() {
+    $.support.cors = true; 
     $.ajax({
         url: "https://spermy.herokuapp.com/api/donor",
         type: 'GET',
-        headers: {'Access-Control-Allow-Origin': 'http://localhost:5500', 'Vary': 'Origin'},
+        crossDomain:'true',
         success: getAllDonorsSuccess,
         error: getAllDonorsError
     });
@@ -24,7 +25,7 @@ function getAllDonorsSuccess(response) {
                         '<div class="card m-2" style="width: 18rem;"> '+
                         '<img src="assets/donnor-1.jpeg" class="card-img-top" alt="...">' +
                         '<div class="card-body">' +
-                        '<h5 class="card-title">Wild Jerry</h5>' +
+                        '<h5 class="card-title">'+ element.firstName + '</h5>' +
                         '<p class="card-text">Not enough could be said...</p>' +
                         '<a href="#" class="btn btn-primary">Get Sperm</a>' +
                         '</div></div></div>';
@@ -32,8 +33,6 @@ function getAllDonorsSuccess(response) {
     });
 
 }
-
-
 
 function getAllDonorsError(request,status,error) {
 
@@ -69,3 +68,7 @@ var postAddDonorJson = {
                         gender: $('gender'), 
                         address: $('address')
                     }
+
+$('submitdonor').click(function(event) {
+    addDonor();
+});                    
