@@ -33,7 +33,7 @@ function getAllDonorsSuccess(response) {
         var donor = '<div class="card mb-3">' +
                     '<div class="row no-gutters"> ' +
                         '<div class="col-md-3">' +
-                           '<img src="assets/donnor-1.jpeg" class="img-thumbnail border-0" alt="...">' +
+                           '<img src="'+ element.imgURL+'" class="img-thumbnail border-0" alt="...">' +
                         '</div>'+
                     '<div class="col-md-9">' +
                     '<div class="card-body">'+

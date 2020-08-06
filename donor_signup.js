@@ -1,4 +1,9 @@
 $(document).ready(function () {
+
+   
+    alert("script connected");
+    
+
     $('submitdonor').click(function(event) {
     addDonor();
 });                    
