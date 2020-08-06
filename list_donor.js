@@ -37,9 +37,16 @@ function getAllDonorsSuccess(response) {
     let uniqueEyeColors = [...new Set(response.map(item => item.eyeColor))];
     console.log(uniqueEyeColors);
 
+    var filterRaces = $('#filterRaces');
+
+    uniqueRaces.forEach(element => {
+        var filter = '<li><a href="#" class="'+element.toLowerCase() +'">'+ element+'</a></li>';
+       $(filterRaces).append(filter);
+    });
+
     response.forEach(element => {
     
-        var donor = '<div class="card mb-3 container-fluid">' +
+        var donor = '<div class="card mb-3 container-fluid '+ element.race.toLowerCase()+'">' +
                         '<div class="row no-gutters"> ' +
                             '<div class="col-md-3">' +
                             '<img src="'+ element.imgURL+'" class="img-thumbnail border-0" style="max-height: 200px; max-width:200px;" alt="...">' +
@@ -85,6 +92,28 @@ function getAllDonorsSuccess(response) {
                         '</div>' +
                     '</div>';
         $(donorList).append(donor);
+
+        $('#filterRaces li a').click(function() {
+            // store anything commonly called in variables to speed up your code
+            const $this = $(this)
+            const ourClass = $this.attr('class');
+            const $ourHolder = $('#donors');
+            // reset the active class on all the buttons
+            $('#filterRaces li').removeClass('active');
+            // update the active state on our clicked button
+            $this.parent().addClass('active');
+            
+            if (ourClass === 'all') {
+              // show all our items
+              $ourHolder.children('div.card').show(); 
+            } else {
+              // hide all elements that don't share ourClass
+              $ourHolder.children('div:not(.' + ourClass + ')').hide();
+              // show all elements that do share ourClass
+              $ourHolder.children('div.' + ourClass).show();
+            }
+            return false;
+          });
     });
 
 }
