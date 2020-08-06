@@ -14,14 +14,14 @@
     box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
 ol, ul { list-style: none; }
-ul#filterRaces {
+ul.filters {
 	width: 802px;
 	height: 52px;
 	margin: 30px 0;
 	overflow: hidden;
 }
-ul#filterRaces li { height: 52px; margin-right: 2px; float: left; }
-ul#filterRaces li a {
+ul.filters li { height: 52px; margin-right: 2px; float: left; }
+ul.filters li a {
 	height: 50px;
 	padding: 0 20px;
 	border: 1px solid #999;
@@ -32,5 +32,5 @@ ul#filterRaces li a {
 	text-decoration: none;
 	display: block;
 }
-ul#filterRaces li a:hover { background: #c9c9c9; }
-ul#filterRaces li.active a { background: #999; }
+ul.filters li a:hover { background: #c9c9c9; }
+ul.filters li.active a { background: #999; }

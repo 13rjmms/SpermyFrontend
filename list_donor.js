@@ -25,28 +25,22 @@ function getAllDonorsSuccess(response) {
     let uniqueRaces = [...new Set(response.map(item => item.race))];
     console.log(uniqueRaces);
 
-    let uniqueAges = [...new Set(response.map(item => item.age))];
-    console.log(uniqueAges);
-
-    let uniqueBloodTypes = [...new Set(response.map(item => item.bloodType))];
-    console.log(uniqueBloodTypes);
-
-    let uniqueHairColors = [...new Set(response.map(item => item.hairColor))];
-    console.log(uniqueHairColors);
-
-    let uniqueEyeColors = [...new Set(response.map(item => item.eyeColor))];
-    console.log(uniqueEyeColors);
-
     var filterRaces = $('#filterRaces');
+    var filterNationalities = $('#filterNationality');
 
     uniqueRaces.forEach(element => {
         var filter = '<li><a href="#" class="'+element.toLowerCase() +'">'+ element+'</a></li>';
        $(filterRaces).append(filter);
     });
 
+    uniqueNationalites.forEach(element => {
+        var filter = '<li><a href="#" class="'+element.toLowerCase() +'">'+ element+'</a></li>';
+       $(filterNationalities).append(filter);
+    });
+
     response.forEach(element => {
     
-        var donor = '<div class="card mb-3 container-fluid '+ element.race.toLowerCase()+'">' +
+        var donor = '<div class="card mb-3 container-fluid '+ element.race.toLowerCase()+' '+ element.nacionality.toLowerCase()+'">' +
                         '<div class="row no-gutters"> ' +
                             '<div class="col-md-3">' +
                             '<img src="'+ element.imgURL+'" class="img-thumbnail border-0" style="max-height: 200px; max-width:200px;" alt="...">' +
@@ -91,29 +85,41 @@ function getAllDonorsSuccess(response) {
                             '</div>' +
                         '</div>' +
                     '</div>';
+
         $(donorList).append(donor);
 
         $('#filterRaces li a').click(function() {
-            // store anything commonly called in variables to speed up your code
             const $this = $(this)
             const ourClass = $this.attr('class');
             const $ourHolder = $('#donors');
-            // reset the active class on all the buttons
             $('#filterRaces li').removeClass('active');
-            // update the active state on our clicked button
             $this.parent().addClass('active');
             
             if (ourClass === 'all') {
-              // show all our items
               $ourHolder.children('div.card').show(); 
             } else {
-              // hide all elements that don't share ourClass
               $ourHolder.children('div:not(.' + ourClass + ')').hide();
-              // show all elements that do share ourClass
               $ourHolder.children('div.' + ourClass).show();
             }
             return false;
-          });
+        });
+
+        $('#filterNationality li a').click(function() {
+            const $this = $(this)
+            const ourClass = $this.attr('class');
+            const $ourHolder = $('#donors');
+            $('#filterRaces li').removeClass('active');
+            $this.parent().addClass('active');
+            
+            if (ourClass === 'all') {
+              $ourHolder.children('div.card').show(); 
+            } else {
+              $ourHolder.children('div:not(.' + ourClass + ')').hide();
+              $ourHolder.children('div.' + ourClass).show();
+            }
+            return false;
+        });
+
     });
 
 }
