@@ -19,7 +19,7 @@ function getAllDonorsSuccess(response) {
     console.log(response);
     var donorList = $('#donors');
     donorList.empty();
-
+    
     response.forEach(element => {
         var donors = '<div class="col-sm-6 col-md-4">' +
                         '<div class="card m-2" style="width: 18rem;"> '+
@@ -44,31 +44,3 @@ function getAllDonorsError(request,status,error) {
     $(donorList).append(message);
 
 }
-
-function addDonor() {
-    $.ajax({
-        url: "https://spermy.herokuapp.com/api/donor",
-        type: 'POST',
-        data: JSON.stringify(postAddDonorJson),
-        success: getAllDonorsSuccess,
-        error: getAllDonorsError
-    });
-}
-
-var postAddDonorJson = {
-                        firstname: $('firstname'), 
-                        lastname: $('lastname'), 
-                        age: $('age'), 
-                        email: $('email'), 
-                        city: $('city'), 
-                        username: $('username'), 
-                        password: $('password'), 
-                        phone: $('phone'), 
-                        bi: $('bi'), 
-                        gender: $('gender'), 
-                        address: $('address')
-                    }
-
-$('submitdonor').click(function(event) {
-    addDonor();
-});                    
